@@ -1,3 +1,27 @@
 h1 {
-  color: blue;
+  color: #212121;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.weather-app {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  box-sizing: border-box;
+  color: #878787;
+  display: block;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 40px;
+}
+.current-temperature {
+  color: #212121;
+  font-size: 80px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.current-temperature-emoji {
+  font-size: 50px;
 }
