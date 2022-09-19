@@ -45,7 +45,6 @@ ul {
   color: #212121;
   font-size: 80px;
   font-weight: 700;
-  margin-left: 10px;
   position: relative;
   top: 15px;
 }
@@ -61,6 +60,15 @@ ul {
   line-height: 36px;
   position: relative;
   top: -20px;
+}
+
+#celsius-button {
+  text-decoration: none;
+  color: #212121;
+}
+
+#fahrenheit-button {
+  text-decoration: none;
 }
 
 .weather-image {
