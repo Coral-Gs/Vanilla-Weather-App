@@ -46,6 +46,8 @@ ul {
   font-size: 80px;
   font-weight: 700;
   margin-left: 10px;
+  position: relative;
+  top: 15px;
 }
 
 .current-temperature-image {
@@ -58,7 +60,7 @@ ul {
   font-weight: 400;
   line-height: 36px;
   position: relative;
-  top: -34px;
+  top: -20px;
 }
 
 .weather-image {
