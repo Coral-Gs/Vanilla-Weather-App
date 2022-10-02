@@ -28,7 +28,7 @@ ul {
 }
 
 .weather-app {
-  background: #fff;
+  background: #ffff;
   border-radius: 16px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   color: #878787;
@@ -75,9 +75,8 @@ ul {
   font-size: 30px;
 }
 
-.weather-forecast-preview {
-  border-bottom: 1px solid #f9f7fe;
-  margin: 40px 0;
+.weather-forecast {
+  margin: 40px 0px 40px 0px;
   text-align: center;
 }
 

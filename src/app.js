@@ -21,6 +21,12 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecastCoords(coordinates) {
+  let apiKey = "cf6b50b908fa2e0baca3eed8a569a5f6";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric}`;
+  console.log(apiUrl);
+}
+
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("h1");
@@ -43,6 +49,8 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecastCoords(response.data.coord);
 }
 
 function search(city) {
@@ -71,7 +79,30 @@ function displayCelciusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-search("madrid");
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  
+            <div class="col-2">
+                <div class="forecast-day">${day}</div>
+                <div class="forecast-icon">☀️</div>
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">29°</span>
+                  <span class="forecast-temperature-min">19°</span>
+                </div>
+            </div>
+            
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 let celsiusTemperature = null;
 
@@ -83,3 +114,6 @@ fahrenheitButton.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusButton = document.querySelector("#celsius-button");
 celsiusButton.addEventListener("click", displayCelciusTemperature);
+
+search("madrid");
+displayForecast();
